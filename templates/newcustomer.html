@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>New Customer</title>
-    </head>
-    <body>
-        <h1>Create New Customer</h1>
-   <script>
-
-   </script>
-    </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<h1>Create New Customer</h1>
+<form action="{{url_for('addcustomer')}}" method = "post">
+    <div class="row">
+        <label>Salutation</label> <input class="form-control border border-primary" type="text" name="salutation"/>
+    </div>
+    <div class="row">
+        <label>Name</label> <input class="form-control border border-primary" type="text" name="name"/>
+    </div>
+    <div class="row">
+        <label>Address</label> <input class="form-control border border-primary" type="text" name="address"/>
+    </div>
+    <div class="row">
+        <label>Points</label> <input class="form-control border border-primary" type="text" name="points"/>
+    </div>
+    <button type="submit" class="btn btn-primary shadow">Create</button>
+</form>
+{% endblock%}

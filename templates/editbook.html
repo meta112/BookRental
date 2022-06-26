@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Edit Book</title>
-    </head>
-    <body>
-        <h1>Edit Book</h1>
-   <script>
-
-   </script>
-    </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<div class="container">
+<h1>Edit Book</h1>
+<form action="{{url_for('updatebook')}}" method="post">
+    <input type="hidden" name="id" value="{{book.id}}"/>
+    <div class="row">
+        <label>Title</label> <input class="form-control border border-primary" type="text" name="title" value="{{book.title}}"/>
+    </div>
+    <div class="row">
+        <label>Stock</label> <input class="form-control border border-primary" type="text" name="stock" value="{{book.stock}}"/>
+    </div>
+    <button type="submit" class="btn btn-primary shadow">Create</button>
+</form>
+</div>
+{% endblock %}
