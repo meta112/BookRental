@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-#from sqlitedb import dbconnection
+from sqlitedb import dbconnection
 from customer import Customer
 from book import Book
 from transaction import Transaction
-from postgresdb import dbconnection
+#from postgresdb import dbconnection
 
 
 app = Flask(__name__)
